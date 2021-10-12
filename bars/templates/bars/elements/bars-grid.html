@@ -1,0 +1,45 @@
+{% if gaming_bars %}
+    <div class="container px-5 my-2">
+        <div class="row g-5 justify-content-center">
+            {% for gaming_bar in gaming_bars %}
+                <div class="col-lg-5 col-xl-4">
+                    <div class="card mb-4 mb-xl-0">
+                        <img src="{{ gaming_bar.header_image.url }}" class="card-img-top"
+                             style="height:200px; object-fit: cover" alt="">
+                        <div class="card-body p-4">
+                            <div class="row ">
+                                <div class="col">
+                                    <div class="small text-uppercase fw-bold text-muted">{{ gaming_bar.address.city }}</div>
+                                </div>
+                                <div class="col text-end">
+                                    {% if gaming_bar.published_recently %}
+                                        <span class="badge bg-success">New!</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <h4>{{ gaming_bar.name }}</h4>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li>
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>{{ gaming_bar.description }}</strong>
+                                </li>
+                                <li class="my-5">
+                                    {{ gaming_bar.address.address_line_1 }}
+                                    {% if gaming_bar.address.address_line_2 %}
+                                        {{ gaming_bar.address.address_line_2 }}
+                                    {% endif %}
+                                    <br>
+                                    {{ gaming_bar.address.zip_code }} {{ gaming_bar.address.city }}
+                                </li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="{% url 'bars:bar-detail' pk=gaming_bar.id %}">Plus d'infos</a></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

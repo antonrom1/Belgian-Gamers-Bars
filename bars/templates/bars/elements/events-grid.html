@@ -1,0 +1,28 @@
+{% if events %}
+    <div class="container px-5 my-2">
+        <div class="row g-5 justify-content-center">
+            {% for event in events %}
+                <div class="col-lg-5 col-xl-4">
+                    <div class="card mb-4 mb-xl-0">
+                        <img src="{{ event.header_image.url }}" class="card-img-top"
+                             style="height:200px; object-fit: cover" alt="">
+                        <div class="card-body p-4">
+                            <div class="small text-uppercase fw-bold text-muted">{{ event.bar.city }}</div>
+                            <div class="mb-3">
+                                <h4>{{ event.name }}</h4>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li>
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>{{ event.description }}</strong>
+                                </li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="#">Plus d'infos</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

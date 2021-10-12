@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <section class="py-5 border-bottom">
+        <div class="text-center mb-5">
+            {% if gaming_bars %}
+                <h1 class="fw-bolder">Trouvez le bar le plus proche!</h1>
+                <p class="lead mb-0">Nous répertorions les bars de jeux belges.</p>
+            {% else %}
+                <p class="lead mb-0">Il n'y a aucun bar répertorié pour l'instant...</p>
+            {% endif %}
+        </div>
+        {% if gaming_bars %}
+            {% include 'bars/elements/bars-grid.html' %}
+        {% endif %}
+    </section>
+    <section class="bg-red py-5 border-bottom">
+        <div class="text-center mb-5">
+            {% if events %}
+                <h1 class="fw-bolder">Évènements à venir</h1>
+                <p class="lead mb-0">Découvrez les évènements près de chez vous</p>
+            {% else %}
+                <p class="lead mb-0">Il n'y a aucun évènement à venir pour l'instant...</p>
+            {% endif %}
+
+        </div>
+        {% if events %}
+            {% include 'bars/elements/events-grid.html' %}
+        {% endif %}
+    </section>
+{% endblock %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <title>Test</title>#}
+{#    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>#}
+{#    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>#}
+{#    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>#}
+{#</head>#}
+{#<body>#}
+{#    <div id="app"></div>#}
+{#<script type="text/babel">#}
+    {#import {Button} from "../../../static/bootstrap/js/bootstrap.esm";#}
+{##}
+{#    function App(){#}
+{#        const [count, setCount] = React.useState(0);#}
+{##}
+{#        function updateCount() {#}
+{#            setCount(count + 1);#}
+{#        }#}
+{##}
+{#        return (#}
+{#            <div>#}
+                {#<Button/>#}
+{#                <div>{count}</div>#}
+{#                <button onClick={updateCount}>Count!</button>#}
+{#            </div>#}
+{#        );#}
+{#    }#}
+{##}
+{#    ReactDOM.render(<App />, document.querySelector("#app"));#}
+{#</script>#}
+{#</body>#}
+{#</html>#}

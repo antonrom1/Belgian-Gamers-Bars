@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block body %}
+    <div class="container-sm my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ object.header_image.url }}" class="img-fluid w-100" style="object-fit: cover; height: 200px;" alt="">
+            </div>
+            <div class="col-md-6 p">
+                <h1>{{ object.name }}</h1>
+                <h4 class="lead">{{ object.description }}</h4>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        {{ object.schedule }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

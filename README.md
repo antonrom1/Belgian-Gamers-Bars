@@ -1,1 +1,1 @@
-# Belgian-Gamers-Bars
+# BelgianGamersBars
