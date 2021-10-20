@@ -4,5 +4,4 @@ djangorestframework==3.12.4
 Pillow
 django-richtextfield==1.6.1
 django-ckeditor==6.1.0
-environ==1.0
 django-livereload-server==0.3.2
